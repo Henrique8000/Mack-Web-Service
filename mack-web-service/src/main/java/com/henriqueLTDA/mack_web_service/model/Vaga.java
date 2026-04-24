@@ -1,4 +1,4 @@
-package com.henriqueLTDA.mack_web_service.entities;
+package com.henriqueLTDA.mack_web_service.model;
 
 import java.time.LocalDate;
 

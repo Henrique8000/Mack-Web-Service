@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.henriqueLTDA.mack_web_service.entities.Vaga;
+import com.henriqueLTDA.mack_web_service.model.Vaga;
 
 @RestController
 public class VagaController {

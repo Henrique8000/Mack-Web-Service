@@ -1,10 +1,15 @@
-package com.henriqueLTDA.mack_web_service.entities;
+package com.henriqueLTDA.mack_web_service.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Estudante {
 	
-	private Integer id;
+	@Id
+	private Long id;
 	private String nome;
 	private String email;
 	private LocalDate nascimento;
@@ -13,19 +18,19 @@ public class Estudante {
 	public Estudante() {
 	}
 	
-    public Estudante(int id, String nome, String email, LocalDate nascimento, int anoIngresso) {
+    public Estudante(Long id, String nome, String email, LocalDate nascimento, int anoIngresso) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.nascimento = nascimento;
         this.anoIngresso = anoIngresso;
     }
-
-	public Integer getId() {
+    
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
