@@ -1,11 +1,19 @@
 package com.henriqueLTDA.mack_web_service.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Empresa {
 	
+	@Id
 	private Integer id;
 	private String nome;
 	private String cnpj;
 	private String emailContato;
+	
+	public Empresa() {
+	}
 	
 	public Empresa(Integer id, String nome, String cnpj, String emailContato) {
 		this.id = id;

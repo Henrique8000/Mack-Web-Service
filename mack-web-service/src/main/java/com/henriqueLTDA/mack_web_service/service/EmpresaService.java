@@ -1,0 +1,46 @@
+package com.henriqueLTDA.mack_web_service.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.henriqueLTDA.mack_web_service.dao.EmpresaDAO;
+import com.henriqueLTDA.mack_web_service.model.Empresa;
+
+@Service
+public class EmpresaService {
+	
+	@Autowired
+	private EmpresaDAO empresaDAO;
+	
+    public void create(Empresa v){
+        this.empresaDAO.save(v);
+    }
+    
+    public List<Empresa> getAllEstudante(){
+        return this.empresaDAO.findAll();
+    }
+    
+    public Empresa getById(Long id){
+        return this.empresaDAO.findById(id)
+        		.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Empresa com o ID " + id + "não encontrado:"));
+    }
+    
+    public void deleteById(Long id) {
+    	this.empresaDAO.deleteById(id);
+    }
+    
+    public void updateEstudante(Long id, Empresa newEmpresa) {
+    	Empresa e = getById(id);
+    	
+    	e.setNome(newEmpresa.getNome());
+    	e.setCnpj(newEmpresa.getCnpj());
+    	e.setEmailContato(newEmpresa.getEmailContato());
+    	
+    	empresaDAO.save(e);
+    	
+    }
+}
