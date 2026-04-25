@@ -24,7 +24,7 @@ public class EmpresaController {
 	
 	@GetMapping("/todos")
 	public List<Empresa> getAll() {
-		return this.empresaService.getAllEstudante();
+		return this.empresaService.getAllEmpresas();
 	}
 
 	@GetMapping("/{id}")
@@ -33,19 +33,19 @@ public class EmpresaController {
 		}
 		
 	@PostMapping("/cadastrar")
-	public void cadastrarEstudante(@RequestBody Empresa empresa) {
+	public void cadastrarEmpresa(@RequestBody Empresa empresa) {
 		this.empresaService.create(empresa);
 	}
 	
 	
 	@DeleteMapping("/deletar/{id}")
-	public void deletarAluno(@PathVariable long id) {
+	public void deletarEmpresa(@PathVariable long id) {
 		this.empresaService.deleteById(id);
 	}
 	
 	@PutMapping("/atualizar/{id}")
-	public void atualizarEstudante(@PathVariable long id, @RequestBody Empresa novaEmpresa) {
-		empresaService.updateEstudante(id, novaEmpresa);
+	public void atualizarEmpresa(@PathVariable long id, @RequestBody Empresa novaEmpresa) {
+		empresaService.updateEmpresa(id, novaEmpresa);
 	}
 	
 }

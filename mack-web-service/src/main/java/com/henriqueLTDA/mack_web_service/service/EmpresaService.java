@@ -20,7 +20,7 @@ public class EmpresaService {
         this.empresaDAO.save(v);
     }
     
-    public List<Empresa> getAllEstudante(){
+    public List<Empresa> getAllEmpresas(){
         return this.empresaDAO.findAll();
     }
     
@@ -33,7 +33,7 @@ public class EmpresaService {
     	this.empresaDAO.deleteById(id);
     }
     
-    public void updateEstudante(Long id, Empresa newEmpresa) {
+    public void updateEmpresa(Long id, Empresa newEmpresa) {
     	Empresa e = getById(id);
     	
     	e.setNome(newEmpresa.getNome());

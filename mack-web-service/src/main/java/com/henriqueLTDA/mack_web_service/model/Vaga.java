@@ -2,14 +2,22 @@ package com.henriqueLTDA.mack_web_service.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Vaga {
 	
+	@Id
 	private Integer id;
 	private String titulo;
 	private String descricao;
 	private LocalDate publicacao;
 	private Boolean ativo;
 	private Integer idEmpresa;
+	
+	public Vaga() {
+	}
 	
 	public Vaga(Integer id, String titulo, String descricao, LocalDate publicacao, Boolean ativo, Integer idEmpresa) {
 		this.id = id;
